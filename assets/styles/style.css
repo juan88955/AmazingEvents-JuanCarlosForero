@@ -1,0 +1,26 @@
+.navbar, footer {
+    background-color: #ccd9de;
+}
+.card {
+    border: 2px solid #000;
+}
+.card-img-top {
+    border-bottom: 2px solid #000;
+}
+
+.carrosel{
+    height: 30vh;
+}
+
+.logo{
+    height: 25px;
+}
+ 
+footer{
+    height: 8vh;
+}
+
+.footer-img{
+    width: 30px;
+    gap: 5px;
+}
