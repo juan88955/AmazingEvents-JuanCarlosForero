@@ -5,11 +5,15 @@
     border: 2px solid #000;
 }
 .card-img-top {
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 .carrosel{
-    height: 30vh;
+    height: 60vh;
+    object-fit: cover;
+}
+.carrosel-letras{
+    height: 60%;
 }
 
 .logo{
@@ -23,4 +27,11 @@ footer{
 .footer-img{
     width: 30px;
     gap: 5px;
+    
 }
+
+/* .form{
+    width: 50%;
+    gap: 5px;
+    align-items: center;
+} */
