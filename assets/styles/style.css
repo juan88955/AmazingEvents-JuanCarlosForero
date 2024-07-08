@@ -48,6 +48,16 @@ footer {
     object-fit: cover;
 }
 
+.card-img-container {
+    height: 100%;
+    overflow: hidden;
+}
+.card-img-container img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
 footer {
     height: 10vh;
 }
