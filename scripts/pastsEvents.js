@@ -208,7 +208,7 @@ for (let i = 0; i < data.events.length; i++) {
                 <p class="card-text">${data.events[i].description}</p>
                 <div class="d-flex justify-content-between align-items-center mt-auto">
                     <div>
-                        <p>Price: ${data.events[i].price}</p>
+                        <p>Price: ${data.events[i].price}$</p>
                     </div>
                     <a href="./Details.html?id=${data.events[i]._id}" class="btn btn-primary">Details</a>
                 </div>
