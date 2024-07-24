@@ -56,3 +56,16 @@ footer {
     width: 30px;
     gap: 5px;
 }
+
+
+card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+@media (min-width: 992px) {
+    .card {
+        max-width: 300px;
+    }
+}
+
