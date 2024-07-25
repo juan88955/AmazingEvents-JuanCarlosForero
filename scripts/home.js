@@ -210,7 +210,7 @@ for (let i = 0; i < data.events.length; i++) {
                 <div>
                     <p>Price: ${data.events[i].price}$</p>
                 </div>
-                <a href="./detailsAvengers.html" class="btn btn-primary">Details</a>
+                <a href="../pages/detailsAvengers.html" class="btn btn-primary">Details</a>
             </div>
         </div>
     `;
