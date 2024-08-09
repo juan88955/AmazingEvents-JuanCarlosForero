@@ -31,7 +31,7 @@
         </div>
     </nav>
 
-    <main>
+    <main class="contenedor-100vh">
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -88,43 +88,23 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class="container mt-4">
+        <div class="container mt-4 align-items-center">
             <div class="row g-3 align-items-center mb-4">
-                <div class="col-12 col-md-auto">
-                    <div class="d-flex flex-wrap gap-2">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="category1">
-                            <label class="form-check-label" for="category1">Music Concert</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="category2">
-                            <label class="form-check-label" for="category2">Race</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="category3">
-                            <label class="form-check-label" for="category3">Let's go to the cinema</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="category4">
-                            <label class="form-check-label" for="category4">Costume Party</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="category5">
-                            <label class="form-check-label" for="category5">Let's go to the cinema</label>
-                        </div>
-                    </div>
+                <div class="col-12 col-lg-auto mb-3 mb-lg-0">
+                    <div id="checkboxContainer"
+                        class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start"></div>
                 </div>
-                <div class="col-12 col-md-auto ms-md-auto">
+                <div class="col-12 col-lg-auto ms-lg-auto">
                     <div class="input-group">
-                        <input type="search" class="form-control" placeholder="Search">
-                        <button class="btn btn-outline-secondary" type="button">
+                        <input type="search" class="form-control" placeholder="Search events...">
+                        <button class="btn btn-outline-secondary" type="button" id="searchButton">
                             <i class="bi bi-search"></i>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="contenedor"
+        <div id="contenedor" class="container mt-04"
             class="contenedor d-flex flex-wrap justify-content-center gap-3 gap-lg-1 flex-lg-wrap flex-md-wrap">
         </div>
     </main>

@@ -195,83 +195,59 @@ const data = {
   ],
 };
 
-let contenedor = document.getElementById("contenedor");
-let checkboxContainer = document.getElementById("checkboxContainer");
-
-function createCategoryCheckboxes() {
-  const categories = [...new Set(data.events.map(event => event.category))];
-  checkboxContainer.innerHTML = '';
-
-  categories.forEach(category => {
-    const checkbox = document.createElement('div');
-    checkbox.className = 'form-check';
-    checkbox.innerHTML = `
-            <input class="form-check-input" type="checkbox" value="${category}" id="${category}">
-            <label class="form-check-label" for="${category}">${category}</label>
-        `;
-    checkboxContainer.appendChild(checkbox);
-  });
-}
-
-function filterPastEvents() {
-  const searchTerm = document.querySelector('input[type="search"]').value.toLowerCase();
-  const selectedCategories = Array.from(document.querySelectorAll('.form-check-input:checked')).map(checkbox => checkbox.value);
-
-  const filteredEvents = data.events.filter(event => {
-    const isPastEvent = new Date(event.date) < new Date(data.currentDate);
-    const matchesSearch = event.name.toLowerCase().includes(searchTerm) || event.description.toLowerCase().includes(searchTerm);
-    const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(event.category);
-    return isPastEvent && matchesSearch && matchesCategory;
-  });
-
-  displayEvents(filteredEvents);
-}
-
-function displayEvents(events) {
-  contenedor.innerHTML = '';
-
-  if (events.length === 0) {
-    contenedor.innerHTML = '<p class="text-center">No se encontraron eventos pasados que coincidan con tu búsqueda.</p>';
-    return;
-  }
-
-  const row = document.createElement('div');
-  row.className = 'row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center';
-
-  events.forEach(event => {
-    let col = document.createElement("div");
-    col.className = "col";
-    col.innerHTML = `
-          <div class="card h-100">
-              <img src="${event.image}" class="card-img-top" alt="${event.name}">
-              <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">${event.name}</h5>
-                  <p class="card-text">${event.description}</p>
-                  <div class="mt-auto d-flex justify-content-between align-items-center">
-                      <p class="mb-0">Price: ${event.price}$</p>
-                      <a href="./details.html?id=${event._id}" class="btn btn-primary">Details</a>
-                  </div>
-              </div>
-          </div>
-      `;
-    row.appendChild(col);
-  });
-
-  contenedor.appendChild(row);
-}
-
 document.addEventListener('DOMContentLoaded', function () {
-  createCategoryCheckboxes();
-  filterPastEvents();
+  const params = new URLSearchParams(window.location.search);
+  const eventId = params.get('id');
 
-  document.getElementById('searchButton').addEventListener('click', filterPastEvents);
-
-  document.querySelector('input[type="search"]').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      filterPastEvents();
+  if (eventId) {
+    const event = data.events.find(e => e._id === eventId);
+    if (event) {
+      displayEventDetails(event);
+    } else {
+      displayErrorMessage("Event not found");
     }
-  });
-
-  checkboxContainer.addEventListener('change', filterPastEvents);
+  } else {
+    displayErrorMessage("No event ID provided");
+  }
 });
+
+function displayEventDetails(event) {
+  const detailsContainer = document.getElementById('eventDetails');
+  detailsContainer.innerHTML = `
+        <div class="ContainerDetails">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow" style="max-width: 1000px; margin: auto;">
+                        <div class="row g-0">
+                            <div class="col-md-6 p-0">
+                                <img src="${event.image}"
+                                    class="img-fluid w-100 h-100"
+                                    style="object-fit: cover; max-height: 404px;" alt="${event.name}">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body h-100 d-flex flex-column">
+                                    <h2 class="card-title mb-4">${event.name}</h2>
+                                    <ul class="list-group list-group-flush flex-grow-1">
+                                        <li class="list-group-item"><strong>Date:</strong> ${event.date}</li>
+                                        <li class="list-group-item"><strong>Description:</strong> ${event.description}</li>
+                                        <li class="list-group-item"><strong>Category:</strong> ${event.category}</li>
+                                        <li class="list-group-item"><strong>Place:</strong> ${event.place}</li>
+                                        <li class="list-group-item"><strong>Capacity:</strong> ${event.capacity}</li>
+                                        ${event.assistance ? `<li class="list-group-item"><strong>Assistance:</strong> ${event.assistance}</li>` : ''}
+                                        ${event.estimate ? `<li class="list-group-item"><strong>Estimate:</strong> ${event.estimate}</li>` : ''}
+                                        <li class="list-group-item"><strong>Price:</strong> $${event.price}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function displayErrorMessage(message) {
+  const detailsContainer = document.getElementById('eventDetails');
+  detailsContainer.innerHTML = `<p class="text-center text-danger">${message}</p>`;
+}

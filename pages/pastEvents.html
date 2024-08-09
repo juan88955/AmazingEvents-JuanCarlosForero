@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcoming Events</title>
+    <title>Past Events</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
@@ -12,9 +12,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg ">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img class="logo" src="../assets/images/amazing_brand.png" alt=""></a>
+            <a class="navbar-brand" href="#"><img class="logo" src="../assets/images/amazing_brand.png"
+                    alt="Amazing Events logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,7 +32,7 @@
         </div>
     </nav>
 
-    <main>
+    <main class="contenedor-100vh">
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
@@ -39,7 +40,7 @@
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
                     aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" class="active"
-                    aria-label="Slide 3"></button>
+                    aria-current="true" aria-label="Slide 3"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
                     aria-label="Slide 4"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
@@ -47,31 +48,32 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item">
-                    <img src="../assets/images/optional_banner_1.jpg" class="d-block w-100" alt="...">
+                    <img src="../assets/images/optional_banner_1.jpg" class="d-block w-100" alt="Home banner">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <h5>Home</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../assets/images/optional_banner_2.jpg" class="d-block w-100" alt="...">
+                    <img src="../assets/images/optional_banner_2.jpg" class="d-block w-100"
+                        alt="Upcoming Events banner">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <h5>Upcoming Events</h5>
                     </div>
                 </div>
                 <div class="carousel-item active">
-                    <img src="../assets/images/optional_banner_3.jpg" class="d-block w-100" alt="...">
+                    <img src="../assets/images/optional_banner_3.jpg" class="d-block w-100" alt="Past Events banner">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <h5>Past Events</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../assets/images/optional_banner_4.jpg" class="d-block w-100" alt="...">
+                    <img src="../assets/images/optional_banner_4.jpg" class="d-block w-100" alt="Contact banner">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <h5>Contact</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../assets/images/optional_banner_5.jpg" class="d-block w-100" alt="...">
+                    <img src="../assets/images/optional_banner_5.jpg" class="d-block w-100" alt="Stats banner">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <h5>Stats</h5>
                     </div>
@@ -88,46 +90,24 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-
-        <div class="container mt-4">
+        <div class="container mt-4 align-items-center">
             <div class="row g-3 align-items-center mb-4">
-                <div class="col-12 col-md-auto">
-                    <div class="d-flex flex-wrap gap-2">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="category1">
-                            <label class="form-check-label" for="category1">Music Concert</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="category2">
-                            <label class="form-check-label" for="category2">Race</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="category3">
-                            <label class="form-check-label" for="category3">Let's go to the cinema</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="category4">
-                            <label class="form-check-label" for="category4">Costume Party</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="category5">
-                            <label class="form-check-label" for="category5">Let's go to the cinema</label>
-                        </div>
-                    </div>
+                <div class="col-12 col-lg-auto mb-3 mb-lg-0">
+                    <div id="checkboxContainer"
+                        class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start"></div>
                 </div>
-                <div class="col-12 col-md-auto ms-md-auto">
+                <div class="col-12 col-lg-auto ms-lg-auto">
                     <div class="input-group">
-                        <input type="search" class="form-control" placeholder="Search">
-                        <button class="btn btn-outline-secondary" type="button">
+                        <input type="search" class="form-control" placeholder="Search events...">
+                        <button class="btn btn-outline-secondary" type="button" id="searchButton">
                             <i class="bi bi-search"></i>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="contenedor"
-            class="contenedor d-flex flex-wrap justify-content-center gap-3 gap-lg-1 flex-lg-wrap flex-md-wrap">
-        </div>
+        <div id="contenedor" class="container mt-04"
+            class="container d-flex flex-wrap justify-content-center gap-3 gap-lg-1 flex-lg-wrap flex-md-wrap">
     </main>
 
     <footer class="mt-4 py-3">
