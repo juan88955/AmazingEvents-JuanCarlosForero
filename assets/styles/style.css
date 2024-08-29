@@ -1,7 +1,14 @@
-.navbar,
+.navbar{
+    background-color: #6a7d86;
+
+}
 footer {
     background-color: #6a7d86;
+    margin-top: 10px;
 }
+body {
+    background-color: #dae0e3;
+  }
 .navbar-nav .nav-link {
     color: white;
 }
@@ -50,6 +57,20 @@ footer {
     height: 200px;
     object-fit: cover;
 }
+
+.event-table {
+    background-color:  #dae0e3;
+    border: 2px solid #000000;
+  }
+  
+  .event-table thead th {
+    border-bottom: 2px solid #000000;
+  }
+  
+  .event-table th,
+  .event-table td {
+    border: 1px solid #000000;
+  }
 
 footer {
     height: 10vh;
