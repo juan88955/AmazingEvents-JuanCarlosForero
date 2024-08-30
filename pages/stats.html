@@ -93,65 +93,49 @@
     </div>
     <div class="container-fluid py-4 text-center">
       <div class="container">
-        <section>
-          <div id="featured-events-table">
-            <table class="table table-bordered event-table">
-              <thead>
-                <tr>
-                  <th colspan="3" class=" bg-warning fs-4 text-start">Events Statistics</th>
-                </tr>
-                <tr>
-                  <th class="bg-warning-subtle">Events with highest % of assistance</th>
-                  <th class="bg-warning-subtle">Events with lowest % of assistance</th>
-                  <th class="bg-warning-subtle">Events with larger capacity</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td id="highest-attendance"></td>
-                  <td id="lowest-attendance"></td>
-                  <td id="largest-capacity"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-        <section class="mt-5">
-          <div id="upcoming-events-table">
-            <table class="table table-bordered event-table">
-              <thead>
-                <tr>
-                  <th colspan="3" class="bg-warning fs-4 text-start">Upcoming Events</th>
-                </tr>
-                <tr>
-                  <th class="bg-warning-subtle">Categories</th>
-                  <th class="bg-warning-subtle">Revenues</th>
-                  <th class="bg-warning-subtle">Percentage of attendance</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-        </section>
-        <section class="mt-5 text-center">
-          <div id="past-events-table">
-            <table class="table table-bordered event-table">
-              <thead>
-                <tr>
-                  <th colspan="3" class=" bg-warning fs-4 text-start">Past Events</th>
-                </tr>
-                <tr>
-                  <th class="bg-warning-subtle">Categories</th>
-                  <th class="bg-warning-subtle">Revenues</th>
-                  <th class="bg-warning-subtle">Percentage of attendance</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-        </section>
+        <table class="table table-bordered event-table">
+          <thead>
+            <tr>
+              <th colspan="3" class="bg-warning fs-4 text-start">Events Statistics</th>
+            </tr>
+            <tr>
+              <th class="bg-warning-subtle">Events with highest % of assistance</th>
+              <th class="bg-warning-subtle">Events with lowest % of assistance</th>
+              <th class="bg-warning-subtle">Events with larger capacity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="highest-attendance"></td>
+              <td id="lowest-attendance"></td>
+              <td id="largest-capacity"></td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th colspan="3" class="bg-warning fs-4 text-start">Upcoming Events</th>
+            </tr>
+            <tr>
+              <th class="bg-warning-subtle">Categories</th>
+              <th class="bg-warning-subtle">Revenues</th>
+              <th class="bg-warning-subtle">Percentage of attendance</th>
+            </tr>
+          </thead>
+          <tbody id="upcoming-events-body">
+          </tbody>
+          <thead>
+            <tr>
+              <th colspan="3" class="bg-warning fs-4 text-start">Past Events</th>
+            </tr>
+            <tr>
+              <th class="bg-warning-subtle">Categories</th>
+              <th class="bg-warning-subtle">Revenues</th>
+              <th class="bg-warning-subtle">Percentage of attendance</th>
+            </tr>
+          </thead>
+          <tbody id="past-events-body">
+          </tbody>
+        </table>
       </div>
     </div>
   </main>

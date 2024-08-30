@@ -159,8 +159,8 @@ export function generateFeaturedEventsTable(events, currentDate) {
 }
 
 // Función auxiliar para generar tablas de eventos (pasados o futuros)
-function generateEventsTable(events, currentDate, tableId, isPast) {
-  const tableBody = document.querySelector(`#${tableId} tbody`);
+function generateEventsTable(events, currentDate, tableBodyId, isPast) {
+  const tableBody = document.getElementById(tableBodyId);
   tableBody.innerHTML = ''; // Limpiamos las filas existentes
 
   // Filtramos los eventos según si son pasados o futuros
@@ -191,12 +191,12 @@ function generateEventsTable(events, currentDate, tableId, isPast) {
 
 // Función para generar la tabla de eventos futuros
 export function generateUpcomingEventsTable(events, currentDate) {
-  generateEventsTable(events, currentDate, 'upcoming-events-table', false);
+  generateEventsTable(events, currentDate, 'upcoming-events-body', false);
 }
 
 // Función para generar la tabla de eventos pasados
 export function generatePastEventsTable(events, currentDate) {
-  generateEventsTable(events, currentDate, 'past-events-table', true);
+  generateEventsTable(events, currentDate, 'past-events-body', true);
 }
 
 // Función auxiliar para calcular el porcentaje de asistencia
